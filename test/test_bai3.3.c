@@ -14,12 +14,13 @@ void tearDown(void) {
 void test_read_process_name_from_ID(void) {
     char *process_name = NULL;
     //pid_t pid = getpid();  // You can use any valid process ID for testing
-    pid_t pid = 1345;
+    pid_t pid = 3697;
     read_process_name_from_ID(pid, &process_name);
 
     TEST_ASSERT_NOT_NULL(process_name);
     //TEST_ASSERT_NULL(process_name);
     // Add more assertions based on your requirements
+    TEST_ASSERT_EQUAL_STRING(process_name,"/usr/libexec/gsd-xsettings");
 
     // Clean up memory if needed
     free(process_name);
